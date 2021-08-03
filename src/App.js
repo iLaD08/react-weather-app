@@ -2,12 +2,13 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Id from "./pages/[id]";
-import GithubIcon from "./assets/github.png";
+import SourceCode from "./components/source-code";
 import "./App.css";
 
 const App = () => {
   return (
     <div>
+      <SourceCode />
       <Switch>
         <Route exact path="/">
           <Home />
@@ -16,13 +17,6 @@ const App = () => {
           <Id />
         </Route>
       </Switch>
-      <a
-        href="https://github.com/iLaD08/react-weather-app"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <img className="github-icon" src={GithubIcon} alt="" />
-      </a>
     </div>
   );
 };

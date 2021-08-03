@@ -10,9 +10,11 @@ const WeatherData = ({ loading, weather }) => {
         "loading..."
       ) : (
         <div className="data-top">
-          <img src={Logo} alt="YUY" title="YUY" />
+          {temp === 404 ? null : <img src={Logo} alt="YUY" title="YUY" />}
           <div className="location">{name}</div>
-          <div className="temp">{Math.round(temp)}°c</div>
+          <div className="temp">
+            {temp === 404 ? temp : `${Math.round(temp)}°c`}
+          </div>
         </div>
       )}
     </div>

@@ -12,6 +12,14 @@ const getWeather = ({ query, setWeather, setLoading }) => {
         temp: res.data.main.temp,
       });
       setLoading(false);
+    })
+    .catch(() => {
+      console.log("i failed daddy");
+      setLoading(false);
+      setWeather({
+        name: "Not found!",
+        temp: 404,
+      });
     });
 };
 
